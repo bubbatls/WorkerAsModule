@@ -38,3 +38,21 @@ function hugeTask(){
 ```
 
 And it works! the progress of the calculation is updated on the fly
+
+If you need to transfer some stuff like a canvas to the worker you can do something like that:
+
+in the worker
+```
+const mainPage = new WorkerAsModule(self,{
+  takeCanvas(canvas,param2,param3){
+    //some stuff
+  }
+})
+```
+
+and in your page
+```
+var toTransfer = mycanvas.transferControlToOffscreen();
+worker.taskCanvas.transfer(toTransfer)(toTransfer,param2,param3);
+```
+
