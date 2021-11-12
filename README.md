@@ -53,6 +53,6 @@ const mainPage = new WorkerAsModule(self,{
 and in your page
 ```
 var toTransfer = mycanvas.transferControlToOffscreen();
-worker.taskCanvas.transfer(toTransfer)(toTransfer,param2,param3);
+worker.takeCanvas.transfer(toTransfer)(toTransfer,param2,param3);
 ```
 
